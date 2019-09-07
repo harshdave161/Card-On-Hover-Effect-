@@ -1,0 +1,76 @@
+$opacity: .8;
+$opacitynew: 1;
+
+*{padding:0;
+margin:0;
+box-sizing: border-box;
+overflow-x: hidden;
+}
+.Container{
+    display: flex;
+    height: 92vh;
+    justify-content: space-around;
+    align-items: center
+}
+.card{
+    background: #66e755;
+    width:200px;
+    height: 250px;
+    border-radius: 7px;
+    transition: transform 1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: $opacity;
+    position: relative;
+}
+.card1{
+    background: #df5959;
+}
+.card2{
+    background: #62eee2;
+}
+.card3{
+    background: #b54adf;
+}
+.card4{
+    background: hsl(61, 84%, 48%);
+}
+#h1{
+    opacity: $opacity;
+}
+#h1::after{
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    color: black;
+}
+
+.card:hover{
+    opacity: $opacitynew;
+    transform:scale(1.3);
+    z-index: 0;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.507);
+}
+#h1:hover::after{
+    opacity: $opacitynew;
+    z-index: 10;
+    font-size: 42px;
+}
+#foot{
+    text-align: center;
+}
+@media screen and(max-width:700px){
+   .Container{
+       display: grid;
+       grid-template-columns: repeat(auto-fit,minmax(3, 1fr));
+       align-items: center;
+       justify-content: space-around;
+       .card{
+           margin: 30px 0 30px 0;
+       }
+   } 
+}
